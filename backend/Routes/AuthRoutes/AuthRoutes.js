@@ -1,7 +1,7 @@
  const express= require('express');
 const userRouter=express.Router();
 const bcrypt = require('bcrypt');
-const {checkRegisterEmail,createUser} =require('../../Controller/AuthController/AuthController')
+const {checkRegisterEmail,createUser,userLogin} =require('../../Controller/AuthController/AuthController')
 const salt = 10;
 
 userRouter.post("/register",async (req,res)=>{
@@ -33,6 +33,31 @@ if(!email||!password||!name){
  }
 
    
+})
+
+
+
+userRouter.post("/login",async(req,res)=>{
+   const {email,password}=req.body;
+   if(!email||!password){
+    return res.status(400).send({message:"email,password is required"});
+   }
+
+   try{
+         const status=await userLogin(email,password);
+
+          const {message,token}=status;
+           
+          if(!token){
+            return res.status(400).send({message })
+          }
+          
+          return res.status(200).send({message,token});
+
+   }catch(e){
+        console.log(e)
+   }
+
 })
 
 

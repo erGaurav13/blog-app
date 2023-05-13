@@ -1,5 +1,8 @@
 const {UserModel}=require('../../Models/UserModel/userModel')
-
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const checkRegisterEmail=async (email)=>{
      try{
@@ -29,6 +32,36 @@ const createUser=async(name,email,hash)=>{
 }
 
 
+const userLogin=async(email,password)=>{
+console.log(password,email)
+    try{
+        // find user
+        const user= await UserModel.findOne({email});
+        // console.log(user)
+        if(!user ){
+            return {message:"email id not registered",token:null};
+        }    
+   
+        //   validate password 
+        // console.log(password,user.password)
+    let isValid= await bcrypt.compare(password, user.password);
+    // console.log(isValid)
+         if(!isValid){
+            return {message:"password not valid",token:null};
+         }
+        
+         const token = jwt.sign({ email: user.email }, process.env.SECRETE_KEY, {
+            expiresIn: process.env.TOKEN_EXP,
+          });
+
+          return {message:"Sucess Login", token: token}
+    }catch(e){
+        console.log(e)
+        return false;
+    }
+}
+
+
 module.exports={
-    checkRegisterEmail,createUser
+    checkRegisterEmail,createUser,userLogin
 }
