@@ -40,7 +40,7 @@ const handelSubmit=()=>{
        <FormLabel>Password</FormLabel>
        <Input onChange={handelChange} name="password" placeholder='password' />
         
-       <Button w="100%" onClick={handelSubmit}> Submit</Button>
+       <Button w="100%" mt="1rem" onClick={handelSubmit}> Submit</Button>
 </FormControl>
     </Box>
   </Box>
