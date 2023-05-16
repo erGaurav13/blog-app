@@ -7,7 +7,8 @@ import {
 import { Image } from '@chakra-ui/react'
 import { ChakraProvider,   } from "@chakra-ui/react";
 import { useState } from 'react';
- 
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../Redux/AuthRedux/Auth.Action';
 
 const init={
    email:"",password:"",
@@ -15,13 +16,18 @@ const init={
 export const Login=()=>{
 
 const [state,setState]=useState(init)
+const authdata=useSelector(state=>state )
+
+const dispatch=useDispatch() 
 const handelChange=(e)=>{
   const {name,value}=e.target; 
 setState({...state,[name]:value})
 }
 
-const handelSubmit=()=>{
-   console.log("sub")
+const handelSubmit=(e)=>{
+  // e.preventDefault()
+    console.log(state)
+    dispatch(login(state))
 }
 
  

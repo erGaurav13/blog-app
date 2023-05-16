@@ -5,21 +5,24 @@ import {
    
   } from '@chakra-ui/react'
 import { Image } from '@chakra-ui/react'
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { useState } from 'react';
- 
+import { useDispatch } from 'react-redux';
+import { signup } from '../Redux/AuthRedux/Auth.Action';
 const init={name:"",email:"",password:""}
 
 export const Signup=()=>{
   
 const [state,setState]=useState(init)
+const dispatch=useDispatch()
 const handelChange=(e)=>{
   const {name,value}=e.target; 
 setState({...state,[name]:value})
 }
 
 const handelSubmit=()=>{
-   console.log("sub")
+  dispatch(signup(state))
+  
 }
  console.log(state)
 

@@ -3,7 +3,7 @@ const userRouter=express.Router();
 const bcrypt = require('bcrypt');
 const {checkRegisterEmail,createUser,userLogin} =require('../../Controller/AuthController/AuthController')
 const salt = 10;
-
+// register user route
 userRouter.post("/register",async (req,res)=>{
      const {email,name,password}=req.body;
 if(!email||!password||!name){
@@ -35,8 +35,7 @@ if(!email||!password||!name){
    
 })
 
-
-
+// login Route
 userRouter.post("/login",async(req,res)=>{
    const {email,password}=req.body;
    if(!email||!password){
@@ -60,6 +59,9 @@ userRouter.post("/login",async(req,res)=>{
 
 })
 
+// change password
+
+userRouter.put("/users/:id/reset")
 
 module.exports={
     userRouter
