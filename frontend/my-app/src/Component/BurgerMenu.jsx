@@ -14,7 +14,7 @@ export function BurgerMenu() {
     }
 
     const handelOpen=(event)=>{
-         console.log("open")
+         
          event.stopPropagation();
         setState(true)
     }

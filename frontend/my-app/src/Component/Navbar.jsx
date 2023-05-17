@@ -28,9 +28,9 @@ export const Navbar=()=>{
   <Link>  <Button colorScheme='teal' variant='solid'>
   Home
      </Button></Link>
-  <Button colorScheme='black' variant='solid'>
+  <Link to={'/blog'}> <Button colorScheme='black' variant='solid'>
    Blog
-  </Button>
+  </Button></Link>
  <Link to="/login">  <Button colorScheme='black' variant='solid'>
     Login
   </Button></Link>

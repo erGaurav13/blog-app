@@ -1,4 +1,4 @@
-import { Box} from '@chakra-ui/react'
+import { Box, CircularProgress} from '@chakra-ui/react'
 import {
     FormControl,
     FormLabel,Input  ,Button,Heading
@@ -16,8 +16,8 @@ const init={
 export const Login=()=>{
 
 const [state,setState]=useState(init)
-const authdata=useSelector(state=>state )
-
+const { login_loading,isAuth,token}=useSelector(state=>state.AuthReducer )
+console.log( login_loading,isAuth,token)
 const dispatch=useDispatch() 
 const handelChange=(e)=>{
   const {name,value}=e.target; 
@@ -25,8 +25,6 @@ setState({...state,[name]:value})
 }
 
 const handelSubmit=(e)=>{
-  // e.preventDefault()
-    console.log(state)
     dispatch(login(state))
 }
 
@@ -47,7 +45,7 @@ return  <ChakraProvider >
        <FormLabel>Password</FormLabel>
        <Input name="password" onChange={handelChange} placeholder='password' />
         
-       <Button mt="1rem" w="100%" onClick={handelSubmit}>Submit</Button>
+       <Button    mt="1rem" w="100%" onClick={handelSubmit}>{login_loading?<CircularProgress isIndeterminate size='2rem' color='red.300' />:"Submit"}</Button>
 </FormControl>
     </Box>
   </Box>

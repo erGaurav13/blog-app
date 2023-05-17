@@ -1,4 +1,4 @@
-import { Box} from '@chakra-ui/react'
+import { Box, CircularProgress} from '@chakra-ui/react'
 import {
     FormControl,
     FormLabel,Input,Button,Heading
@@ -7,7 +7,7 @@ import {
 import { Image } from '@chakra-ui/react'
 import { ChakraProvider } from "@chakra-ui/react";
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../Redux/AuthRedux/Auth.Action';
 const init={name:"",email:"",password:""}
 
@@ -15,6 +15,7 @@ export const Signup=()=>{
   
 const [state,setState]=useState(init)
 const dispatch=useDispatch()
+const {signup_loading} =useSelector(state=>state.AuthReducer)
 const handelChange=(e)=>{
   const {name,value}=e.target; 
 setState({...state,[name]:value})
@@ -43,7 +44,7 @@ const handelSubmit=()=>{
        <FormLabel>Password</FormLabel>
        <Input onChange={handelChange} name="password" placeholder='password' />
         
-       <Button w="100%" mt="1rem" onClick={handelSubmit}> Submit</Button>
+       <Button w="100%" mt="1rem" onClick={handelSubmit}> {signup_loading?<CircularProgress isIndeterminate size='2rem' color='red.300' />:"submit"}</Button>
 </FormControl>
     </Box>
   </Box>
