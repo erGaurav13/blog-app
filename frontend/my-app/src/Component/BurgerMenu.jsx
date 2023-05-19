@@ -32,9 +32,9 @@ export function BurgerMenu() {
          {!state?<Button onClick={handelOpen} zIndex={100}    position={"absolute" }top="10px" right="10px"><FiAlignJustify size="30"/></Button>:<Button   onClick={handelClose} zIndex={3} position={"absolute" }top="10px" right="10px"><IoClose  size="30"/></Button>  }
           <Box fontSize={"1.4rem"} position={"fixed"} zIndex={1} w="100%" h="100vh"   onClick={handelClose} display={state?"block":"none"} >
                  <Box onClick={handelOpen} display={"flex"} flexDirection={"column"} gap="10px" zIndex={20}  w="45%" h="100vh" backgroundColor="rgba(64,123,255,0.5)" float="right"   textAlign={"center"} pt="15%">
-                      <Button  bg="white ">Home</Button>
-                    <NavLink  to="/"  > <Button  p="0rem 9rem" bg="white">Signup</Button></NavLink>
-                    <NavLink  to="/login" > <Button p="0rem 9.4rem" bg="white" >Login</Button></NavLink>
+                 <NavLink  to="/home"  >  <Button  bg="white ">Home</Button></NavLink>
+                    <NavLink  to="/"  > <Button  bg="white">Signup</Button></NavLink>
+                    <NavLink  to="/login" > <Button   bg="white" >Login</Button></NavLink>
        </Box>         
       </Box>
       

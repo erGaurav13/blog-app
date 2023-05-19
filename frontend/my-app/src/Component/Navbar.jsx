@@ -25,7 +25,7 @@ export const Navbar=()=>{
       <Box  w="30%" display={"block"} justifyContent={"space-around"}  p="0.8rem"> 
       
      {width<814?true: <Stack direction='row' spacing={4} align='center'> 
-  <Link>  <Button colorScheme='teal' variant='solid'>
+  <Link to={"/home"}>  <Button colorScheme='teal' variant='solid'>
   Home
      </Button></Link>
   <Link to={'/blog'}> <Button colorScheme='black' variant='solid'>
