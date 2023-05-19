@@ -2,7 +2,7 @@ const express = require('express');
 const cors=require('cors');
 const connect=require("./MongoDB/connect")
 const {userRouter}= require('../backend/Routes/AuthRoutes/AuthRoutes')
-
+const {blogRoute}= require('../backend/Routes/BlogRoutes/Blog.Routes')
 const PORT=process.env.PORT || 8080
 const app=express();
 // middleware
@@ -13,7 +13,7 @@ app.use(express.json())
 
 // routing table
 app.use("/api",userRouter)
-
+app.use("/api",blogRoute)
 app.get("/",(req,res)=>{
     res.send("Hello world")
 })
