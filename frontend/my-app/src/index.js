@@ -11,11 +11,11 @@ import {store} from "../src/Redux/store"
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <ChakraBaseProvider>
       <Provider store={store}> 
+    <ChakraBaseProvider>
                 <App />
-                </Provider>
     </ChakraBaseProvider>
+                </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

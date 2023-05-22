@@ -7,8 +7,8 @@ export const PostCard=({email,category,content,likes,title,comments
             <Heading>Author : {email}</Heading>
             <Container>{content}</Container>
             <Button>Like {likes}</Button>
-            <Box><Input name="email"   placeholder='Comments' />
-                  <Button>Comment</Button>
+             <Box display={"flex"} justifyContent={"space-between"}> <Input w="70%" name="email"   placeholder='Comments' />
+                   <Button bg='teal.300' p={"2px"} variant='solid'>Comment</Button>
              </Box>
             
     </Box>
