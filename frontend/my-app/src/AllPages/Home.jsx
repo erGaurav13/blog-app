@@ -5,7 +5,7 @@ import { getBlogs } from '../Redux/BlogRedux/Blog.Action'
 import { PostCard } from '../Component/PostCard'
 export const Home=()=>{
 const {data,getdata_loading}=useSelector(state=>state.BlogReducer)
-console.log(data)
+// console.log(data)
 const dispatch=useDispatch()
 useEffect(()=>{
     
@@ -16,13 +16,13 @@ useEffect(()=>{
 
                 <Box w={"20%"}  bg="red" h="400px" border={"1px solid grren"}>d</Box>  
                 <Box w={"50%"}  bg="red" h="400px" border={"1px solid grren"}>
-                    
-                     {data?.map((e)=>{
-                        return <PostCard {...e} / >
+                    {/* postcard map  */}
+                     {data?.map((e,i)=>{
+                        return <PostCard {...e}  key={Date.now()+i}/ >
                      })} 
                      
                     
-                    d</Box>
+                    </Box>
                 <Box w={"20%"}  bg="red" h="400px" border={"1px solid grren"}>d</Box>
    </Box>
 

@@ -1,8 +1,10 @@
-import { LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCESS, SIGNUP_FAILED, SIGNUP_REQUEST, SIGNUP_SUCESS } from "./Auth.Action.Types"
+import { LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCESS, LOGOUT, SIGNUP_FAILED, SIGNUP_REQUEST, SIGNUP_SUCESS } from "./Auth.Action.Types"
 
+const localStorageToken=(localStorage.getItem("token")) || null
+ 
 const init={
-    isAuth:false,
-    token:"",
+    isAuth:localStorageToken!==null?true:false,
+    token:localStorageToken,
     login_loading:false,
     signup_loading:false,
 }
@@ -19,11 +21,13 @@ export const AuthReducer=(state=init,action)=>{
           }
         
           case LOGIN_SUCESS:{
-            console.log(action.payload)
+            console.log(action.payload);
+            localStorage.setItem("token", action.payload )
             return  {...state, login_loading:false,isAuth:true,token:action.payload}
           }      
  
           case LOGIN_FAILED:{
+            localStorage.setItem("token",null)
             return  {...state, login_loading:false,isAuth:false,token:null}
           }
            
@@ -41,6 +45,12 @@ export const AuthReducer=(state=init,action)=>{
             return {...state,signup_loading:false}
          
          }
+
+         case LOGOUT:{
+          localStorage.setItem("token",null)
+          return {...state,isAuth:false,token:null}
+       
+       }
 
        default: return state 
     }

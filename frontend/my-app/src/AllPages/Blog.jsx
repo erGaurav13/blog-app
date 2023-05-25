@@ -17,7 +17,7 @@ const [state,setState]=useState(obj)
       const {name,value}=e.target;
       setState({...state,[name]:value})
   }
- console.log(state)
+//  console.log(state)
   const handelSubmit=()=>{
     dispatch(postBlogs(state))
   }
