@@ -1,7 +1,9 @@
 import axios from "axios"
 import { GET_BLOGS_FAILED, GET_BLOGS_REQUEST, GET_BLOGS_SUCESS, POST_BLOGS_FAILED, POST_BLOGS_REQUEST, POST_BLOGS_SUCESS } from "./Blog.Action.Types";
 
-
+let token=localStorage.getItem("token");
+axios.defaults.headers.common['Authorization'] = `Bearer${token}`;
+console.log(token,"SS")
 let baseurl="http://localhost:8080"
 export const getBlogs=()=>async (dispatch)=>{
      try{

@@ -5,7 +5,7 @@ import { postBlogs } from "../Redux/BlogRedux/Blog.Action"
 let obj={
     title:"",
     content:"",
-    email:"abc@gmail.com",
+    email: "",
     category:""
 }
 export const Blog=()=>{
@@ -31,13 +31,13 @@ const [state,setState]=useState(obj)
   <option value='General'>General</option>
   <option value='Techenical'>Techenical</option>
   <option value='Health'>Health</option>
-</Select>
+  </Select>
     <FormLabel>Write Blog Here....</FormLabel>
    <Textarea  onChange={handelChange} name="content" w={"100%"} h={"500px"} border={"1px solid black"} >
                 </Textarea>
                 <Button w="100%" bg="teal.300" onClick={handelSubmit}>{postdata_loading?"loading":"POST"}</Button>
     </FormControl>
 
-              
+           
     </Box> 
 }

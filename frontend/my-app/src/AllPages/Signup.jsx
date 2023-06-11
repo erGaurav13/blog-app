@@ -5,7 +5,7 @@ import {
    
   } from '@chakra-ui/react'
 import { Image } from '@chakra-ui/react'
-import { ChakraProvider } from "@chakra-ui/react";
+
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../Redux/AuthRedux/Auth.Action';
@@ -16,6 +16,10 @@ export const Signup=()=>{
 const [state,setState]=useState(init)
 const dispatch=useDispatch()
 const {signup_loading} =useSelector(state=>state.AuthReducer)
+
+ 
+
+
 const handelChange=(e)=>{
   const {name,value}=e.target; 
 setState({...state,[name]:value})
@@ -27,7 +31,7 @@ const handelSubmit=()=>{
 }
  console.log(state)
 
-    return  <ChakraProvider >
+    return  < >
     <Box display={"flex"}  >
     <Box p='4' w={"50%"} h={"100vh"} display={{ base: "none", md: "block" }}   bg='#f0f0f0' >
     <Image w={"100%"} h={"100vh"} src='https://rurutek.com/jio/assets/img/login-animate.gif' alt='Dan Abramov' />
@@ -48,5 +52,5 @@ const handelSubmit=()=>{
 </FormControl>
     </Box>
   </Box>
-  </ChakraProvider>
+  </>
 }

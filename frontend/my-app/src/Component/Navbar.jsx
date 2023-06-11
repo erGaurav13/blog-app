@@ -28,16 +28,16 @@ export const Navbar=()=>{
       <Box  w="30%" display={"block"} justifyContent={"space-around"}  p="0.8rem"> 
       
      {width<814?true: <Stack direction='row' spacing={4} align='center'> 
-  <Link to={"/home"}>  <Button colorScheme='teal' variant='solid'>
+  <Link to={"/home"}>  <Button size="sm"  colorScheme="black"  >
   Home
      </Button></Link>
-  <Link to={'/blog'}> <Button colorScheme='black' variant='solid'>
+  <Link to={'/blog'}> <Button size="sm"  colorScheme="black" variant='solid'>
    Blog
   </Button></Link>
- <Link to="/login">  <Button colorScheme='black' variant='solid'>
+ <Link to="/login">  <Button size="sm"  colorScheme="black"  variant='solid'>
     Login
   </Button></Link>
-  <Link to="/"> <Button colorScheme='black' variant='solid'>
+  <Link to="/"> <Button  size="sm"  colorScheme="black" variant='solid'>
     Signup
   </Button></Link>
   <Link  > <Button onClick={()=>dispatch({type:LOGOUT})} colorScheme='black' variant='solid'>
