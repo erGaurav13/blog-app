@@ -29,3 +29,15 @@ export const postBlogs=(info)=>async (dispatch)=>{
        dispatch({type:POST_BLOGS_FAILED})
     }
 }
+// work fro m here  to delete the blog
+export const deleteBlogbyID=(_id)=>async(dispatch)=>{
+   
+ try{
+    let data= await axios.delete(`${baseurl}/api/blog/${_id}`);
+    console.log(data,"D")
+    dispatch(getBlogs()
+) }catch(e){
+     console.log(e)
+ }
+
+}
