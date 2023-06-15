@@ -3,7 +3,7 @@ import { GET_BLOGS_FAILED, GET_BLOGS_REQUEST, GET_BLOGS_SUCESS, POST_BLOGS_FAILE
 
 let token=localStorage.getItem("token");
 axios.defaults.headers.common['Authorization'] = `Bearer${token}`;
-console.log(token,"SS")
+ 
 let baseurl="http://localhost:8080"
 export const getBlogs=()=>async (dispatch)=>{
      try{
