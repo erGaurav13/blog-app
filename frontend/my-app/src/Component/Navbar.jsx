@@ -21,15 +21,16 @@ export const Navbar=()=>{
 
    return <>
    
-   {width>=814?true:<BurgerMenu/>}
-   <Box   position={"sticky"} top="0px" left="0px" display="flex" justifyContent={"space-between"} w="100%" h="3rem" bg="
+   {width>=1024?true:<BurgerMenu/>}
+   <Box   position={"sticky"} top="0px" left="0px" zIndex={+2} display="flex" justifyContent={"space-between"} w="100%" h="3rem" bg="
     #407bff" color="white">
+      {/* logo */}
       <Box> <Image w="100%" h="3rem" src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30164225/572.png"/> </Box>
       <Box  w="30%" display={"block"} justifyContent={"space-around"}  p="0.8rem"> 
-      
-     {width<814?true: <Stack direction='row' spacing={4} align='center'> 
+      {/* nav link */}
+     {width<1024?true: <Stack direction='row' spacing={4} align='center'> 
   <Link to={"/home"}>  <Button size="sm"  colorScheme="black"  >
-  Home
+     Home
      </Button></Link>
   <Link to={'/blog'}> <Button size="sm"  colorScheme="black" variant='solid'>
    Blog

@@ -54,6 +54,29 @@ blogRoute.delete("/blog/:_id", async (req, res) => {
   }
 });
 
+blogRoute.post("/blog/comment",async (req,res)=>{
+  // email=coment by:
+  // _id =id of blog on which comment is done 
+   
+ 
+  const {email,comment,_id}=req.body;
+  console.log(email)
+  if(!email||!comment){
+     return res.status(400).send({message:"email or comment missing"})
+  }
+ 
+  try{
+      let addComent=await BlogModel.findOne({_id});
+       addComent.comments.push({email,comment});
+       addComent.save();
+       return res.status(201).send({message:"Comment added"})
+  }catch(e){
+console.log(e)
+  }
+
+})
+
+
 module.exports = {
   blogRoute,
 };

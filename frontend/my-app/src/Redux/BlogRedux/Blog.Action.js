@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_BLOGS_FAILED, GET_BLOGS_REQUEST, GET_BLOGS_SUCESS, POST_BLOGS_FAILED, POST_BLOGS_REQUEST, POST_BLOGS_SUCESS } from "./Blog.Action.Types";
+import { GET_BLOGS_FAILED, GET_BLOGS_REQUEST, GET_BLOGS_SUCESS, POST_BLOGS_FAILED, POST_BLOGS_REQUEST, POST_BLOGS_SUCESS, POST_COMMENT_FAILED, POST_COMMENT_REQUEST, POST_COMMENT_SUCESS } from "./Blog.Action.Types";
 
 let token=localStorage.getItem("token");
 axios.defaults.headers.common['Authorization'] = `Bearer${token}`;
@@ -29,7 +29,7 @@ export const postBlogs=(info)=>async (dispatch)=>{
        dispatch({type:POST_BLOGS_FAILED})
     }
 }
-// work fro m here  to delete the blog
+ 
 export const deleteBlogbyID=(_id)=>async(dispatch)=>{
    
  try{
@@ -39,5 +39,22 @@ export const deleteBlogbyID=(_id)=>async(dispatch)=>{
 ) }catch(e){
      console.log(e)
  }
+
+}
+
+
+export const PostComment=(info)=>async(dispatch )=>{
+ 
+  try{
+    dispatch({type:POST_COMMENT_REQUEST})
+    let data= await axios.post(`${baseurl}/api/blog/comment`,info);
+    
+     alert(data.data.message)
+    dispatch({type:POST_COMMENT_SUCESS})
+    dispatch(getBlogs())
+  }catch(e){
+    console.log(e)
+    dispatch({type:POST_COMMENT_FAILED})
+    }
 
 }

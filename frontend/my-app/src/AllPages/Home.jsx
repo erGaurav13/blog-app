@@ -33,7 +33,7 @@ dispatch(deleteBlogbyID(_id))
    return <Box w="100%" border={"1px solid red"} display={"flex"} justifyContent={"space-evenly"}>
 
                 <Box w={"20%"}  bg="red" h="400px" border={"1px solid grren"}>d</Box>  
-                <Box w={"50%"}  bg="red" h="400px" border={"1px solid grren"}>
+                <Box w={"50%"}  bg="red"   border={"1px solid grren"}>
                     {/* postcard map  */}
                      {data?.map((e,i)=>{
                         return <PostCard {...e} deleteid={deleteid} deleteBlog={deleteBlog} key={Date.now()+i}/ >
