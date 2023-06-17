@@ -4,7 +4,7 @@ import { PostComment } from '../Redux/BlogRedux/Blog.Action';
 import {useDispatch} from "react-redux"
 import { CommentCard } from './CommentCard';
 import {ChatIcon } from '@chakra-ui/icons'
-import { FcManager ,FcComments} from "react-icons/fc";
+import { FcManager  } from "react-icons/fc";
 import {AiFillDelete } from "react-icons/ai";
 export const PostCard=({_id,email,category,content,likes,title,comments,deleteid,deleteBlog
 })=>{
@@ -23,19 +23,19 @@ export const PostCard=({_id,email,category,content,likes,title,comments,deleteid
        dispatch(PostComment(data))
     } 
 
-    return <Box w="100%" bg="white" border={"1px solid red"} p="10px" mb="2px">
+    return <Box w="100%" bg="black" color={"white"}  p="10px" mb="2px">
             <Heading textAlign={"center"}>{title}</Heading>
             <Text textAlign={"right"}>category : {category}</Text>
             <Heading size="sm"><FcManager/>   {email}</Heading>
-            <Container whiteSpace={'pre-line'} >{paragraphs}</Container>
-            {/* <Button>Like {likes}</Button> */}
+            <Container whiteSpace={'pre-line'} fontWeight={700} >{paragraphs}</Container>
+            
              <Box display={"flex"} justifyContent={"space-between"}> <Input w="70%" name="comment"  onChange={handelChange}  placeholder='Comments' />
                    <Button bg='teal.300' p={"2px"} variant='solid' onClick={handelcomment}><ChatIcon/></Button>
                    {/* map comments */}
-                 {email===deleteid?<Button bg="red.500" onClick={()=>deleteBlog(_id)}><AiFillDelete/></Button>:null}
+                 {email===deleteid?<Button bg="red.800" onClick={()=>deleteBlog(_id)}><AiFillDelete/></Button>:null}
                 
             </Box>   
-            <Box w="100%" maxH={"250px"} overflow={"scroll"} css={{
+            <Box w="100%" maxH={"250px"} overflow={"scroll"} bg="gray.500" mt="2%" css={{
         "&::-webkit-scrollbar": {
           width: "0.4em",
           background: "transparent",
@@ -44,7 +44,7 @@ export const PostCard=({_id,email,category,content,likes,title,comments,deleteid
           background: "transparent",
         },
       }} >
-            <UnorderedList>
+            <UnorderedList  >
                  {comments.length!==0?comments.map((e)=>{
                         return <CommentCard {...e}/>
                  }):false}

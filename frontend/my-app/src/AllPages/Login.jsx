@@ -32,7 +32,7 @@ const handelSubmit=(e)=>{
 return  < >
     <Box display={"flex"}  >
     <Box p='4' w={"50%"} h={"100vh"} display={{ base: "none", md: "block" }}   bg='#f0f0f0' >
-    <Image w={"100%"} h={"100vh"} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_KgTEeNlUjKGQd2Pq3o5q8Jt8RRYge8Tuvw&usqp=CAU' alt='Dan Abramov' />
+    <Image w={"100%"} h={"80vh"} src='https://cdn.dribbble.com/users/4791850/screenshots/10856688/media/dbe5fbc33a38c5f2345ba702f336226a.gif' alt='Dan Abramov' />
     </Box>
     
     <Box  w={{ base: "100%", md: "50%" }} h={"100vh"}  bg='#f0f0f0'>

@@ -1,4 +1,4 @@
-import { Box, } from '@chakra-ui/react'
+import { Box, Heading, Image} from '@chakra-ui/react'
 import { useEffect } from 'react'
 import {useDispatch,useSelector} from "react-redux"
 import { getBlogs,deleteBlogbyID } from '../Redux/BlogRedux/Blog.Action'
@@ -8,6 +8,7 @@ import jwtDecode from 'jwt-decode';
 import { useState } from 'react';
 export const Home=()=>{
 const {data,getdata_loading}=useSelector(state=>state.BlogReducer)
+ 
 // console.log(data)
 const [deleteid,setDeleteid]=useState(null)
 const token=localStorage.getItem("token")
@@ -28,18 +29,18 @@ const deleteBlog=(_id)=>{
  console.log(_id)
 dispatch(deleteBlogbyID(_id))
 }
- 
-
-   return <Box w="100%" border={"1px solid red"} display={"flex"} justifyContent={"space-evenly"}>
-
-                <Box w={"20%"}  bg="red" h="400px" border={"1px solid grren"}>d</Box>  
-                <Box w={"50%"}  bg="red"   border={"1px solid grren"}>
+  
+if(getdata_loading){
+    return  <Image w="100%" h="100vh" src="https://cdn.pixabay.com/animation/2022/10/11/03/16/03-16-39-160_512.gif"/>
+}
+   return <Box bg="#f0f0f0 " w="100%"   display={"flex"} justifyContent={"space-evenly"}>
+                <Box w={"100%"}      >
                     {/* postcard map  */}
+                    {data.length==0?<Heading>No Blogs Data </Heading>:false}
                      {data?.map((e,i)=>{
                         return <PostCard {...e} deleteid={deleteid} deleteBlog={deleteBlog} key={Date.now()+i}/ >
                      })}                 
-                    </Box>
-                <Box w={"20%"}  bg="red" h="400px" border={"1px solid grren"}>d</Box>
+                    </Box>            
    </Box>
 
 }

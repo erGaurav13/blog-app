@@ -9,8 +9,8 @@ export const getBlogs=()=>async (dispatch)=>{
      try{
          dispatch({type:GET_BLOGS_REQUEST})
          let data= await axios.get(`${baseurl}/api/blog/`);
-         console.log(data)
-         dispatch({type:GET_BLOGS_SUCESS,payload:data.data.post})
+          let reversed=data.data.post.reverse()
+         dispatch({type:GET_BLOGS_SUCESS,payload:reversed})
      }catch(e){
         dispatch({type:GET_BLOGS_FAILED})
      }

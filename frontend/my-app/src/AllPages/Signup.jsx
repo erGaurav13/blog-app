@@ -34,7 +34,7 @@ const handelSubmit=()=>{
     return  < >
     <Box display={"flex"}  >
     <Box p='4' w={"50%"} h={"100vh"} display={{ base: "none", md: "block" }}   bg='#f0f0f0' >
-    <Image w={"100%"} h={"100vh"} src='https://rurutek.com/jio/assets/img/login-animate.gif' alt='Dan Abramov' />
+    <Image w={"100%"} h={"90vh"} src='https://cdn.dribbble.com/users/522566/screenshots/2809863/drin__1_.gif' alt='Dan Abramov' />
     </Box>
     
     <Box  w={{ base: "100%", md: "50%" }} h={"100vh"}  bg='#f0f0f0'>

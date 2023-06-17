@@ -22,7 +22,7 @@ const [state,setState]=useState(obj)
     dispatch(postBlogs(state))
   }
 
-    return <Box>
+    return <Box  >
                 <FormControl m="auto" mt="1%"    w="70%">
      <FormLabel>Title</FormLabel>
     <Input onChange={handelChange} type='text' name="title" w={"100%"} placeholder="Title of blog"   border={"1px solid black"}/>
@@ -32,8 +32,8 @@ const [state,setState]=useState(obj)
   <option value='Techenical'>Techenical</option>
   <option value='Health'>Health</option>
   </Select>
-    <FormLabel>Write Blog Here....</FormLabel>
-   <Textarea  onChange={handelChange} name="content" w={"100%"} h={"500px"} border={"1px solid black"} >
+    <FormLabel textAlign={"center"}>Write Blog Here....</FormLabel>
+   <Textarea bg="black" color={"white"}  onChange={handelChange} name="content" w={"100%"} h={"400px"} border={"1px solid black"} >
                 </Textarea>
                 <Button w="100%" bg="teal.300" onClick={handelSubmit}>{postdata_loading?"loading":"POST"}</Button>
     </FormControl>
