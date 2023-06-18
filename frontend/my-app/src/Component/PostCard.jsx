@@ -23,6 +23,7 @@ export const PostCard=({_id,email,category,content,likes,title,comments,deleteid
        dispatch(PostComment(data))
     } 
 
+    console.log(email,deleteid)
     return <Box w="100%" bg="black" color={"white"}  p="10px" mb="2px">
             <Heading textAlign={"center"}>{title}</Heading>
             <Text textAlign={"right"}>category : {category}</Text>

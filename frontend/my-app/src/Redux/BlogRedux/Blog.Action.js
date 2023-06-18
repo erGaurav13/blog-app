@@ -4,7 +4,7 @@ import { GET_BLOGS_FAILED, GET_BLOGS_REQUEST, GET_BLOGS_SUCESS, POST_BLOGS_FAILE
 let token=localStorage.getItem("token");
 axios.defaults.headers.common['Authorization'] = `Bearer${token}`;
  
-let baseurl="http://localhost:8080"
+let baseurl="https://boubt.onrender.com"
 export const getBlogs=()=>async (dispatch)=>{
      try{
          dispatch({type:GET_BLOGS_REQUEST})

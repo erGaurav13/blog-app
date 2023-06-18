@@ -10,7 +10,7 @@ import {
 } from "./Auth.Action.Types";
 // dotenv.config()
 
-let url = "http://localhost:8080";
+let url = "https://boubt.onrender.com";
 export const login = (info) => async (dispatch) => {
   console.log(info);
   try {

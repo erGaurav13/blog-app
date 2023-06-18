@@ -18,7 +18,7 @@ useEffect(()=>{
     if(decodedToken){
         setDeleteid(decodedToken.email)
     } 
-},[])
+}, )
 
 const dispatch=useDispatch()
 useEffect(()=>{   
@@ -36,7 +36,7 @@ if(getdata_loading){
    return <Box bg="#f0f0f0 " w="100%"   display={"flex"} justifyContent={"space-evenly"}>
                 <Box w={"100%"}      >
                     {/* postcard map  */}
-                    {data.length==0?<Heading>No Blogs Data </Heading>:false}
+                    {data.length===0?<Heading>No Blogs Data </Heading>:false}
                      {data?.map((e,i)=>{
                         return <PostCard {...e} deleteid={deleteid} deleteBlog={deleteBlog} key={Date.now()+i}/ >
                      })}                 

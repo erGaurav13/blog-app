@@ -26,7 +26,7 @@ export const Navbar=()=>{
 
    <Box zIndex={+2}  position={"sticky"} top="0px" 
         left="0px" display="flex" justifyContent={"space-between"} 
-        w="100%" h="3rem" bg="#407bff" color="white" 
+        w="100%" h="3rem" bg="black" color="white" 
         >
       <Box> <Image w="100%" h="3rem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShQA081MkpQ5XfPxch-8qsAb5CfG98n--pz1zVZM4DbWR-o4PrJMqa1UjhjAMEoS-3rlY&usqp=CAU"/> </Box>
       <Box  w="30%" display={"block"} justifyContent={"space-around"}  p="0.8rem"> 
