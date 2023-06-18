@@ -28,16 +28,16 @@ export const Navbar=()=>{
         left="0px" display="flex" justifyContent={"space-between"} 
         w="100%" h="3rem" bg="#407bff" color="white" 
         >
-      <Box> <Image w="100%" h="3rem" src="https://previews.123rf.com/images/mrgao/mrgao1502/mrgao150200011/36963437-red-blog-app-icon-illustration-on-white-background.jpg"/> </Box>
+      <Box> <Image w="100%" h="3rem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShQA081MkpQ5XfPxch-8qsAb5CfG98n--pz1zVZM4DbWR-o4PrJMqa1UjhjAMEoS-3rlY&usqp=CAU"/> </Box>
       <Box  w="30%" display={"block"} justifyContent={"space-around"}  p="0.8rem"> 
       {/* Responsive for loading Menu according to width */}
      {width<1024?true: <Stack direction='row' spacing={4} align='center'> 
      {/* Links for different page  */}
   <Link to={'/home'}> <Button colorScheme='black' variant='solid'>
-   Home
+   All Doubt
   </Button></Link>
    <Link to={"/blog"}>  <Button colorScheme='black' variant='solid'>
-    Blog
+    Doubt
    </Button>
    </Link>
   {/* if user not login render this */}

@@ -25,14 +25,14 @@ const [state,setState]=useState(obj)
     return <Box  >
                 <FormControl m="auto" mt="1%"    w="70%">
      <FormLabel>Title</FormLabel>
-    <Input onChange={handelChange} type='text' name="title" w={"100%"} placeholder="Title of blog"   border={"1px solid black"}/>
+    <Input onChange={handelChange} type='text' name="title" w={"100%"} placeholder="Title of Doubt"   border={"1px solid black"}/>
     <FormLabel>Category</FormLabel>
     <Select bg="blue.300" spacing={3} name="category" placeholder='Category' onChange={handelChange}>
   <option value='General'>General</option>
   <option value='Techenical'>Techenical</option>
-  <option value='Health'>Health</option>
+  <option value='career'>career</option>
   </Select>
-    <FormLabel textAlign={"center"}>Write Blog Here....</FormLabel>
+    <FormLabel textAlign={"center"}>Write Doubt ? Here....</FormLabel>
    <Textarea bg="black" color={"white"}  onChange={handelChange} name="content" w={"100%"} h={"400px"} border={"1px solid black"} >
                 </Textarea>
                 <Button w="100%" bg="teal.300" onClick={handelSubmit}>{postdata_loading?"loading":"POST"}</Button>

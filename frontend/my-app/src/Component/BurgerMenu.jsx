@@ -26,8 +26,8 @@ export function BurgerMenu() {
          {!state?<Button onClick={handelOpen} zIndex={100}    position={"fixed" }top="10px" right="10px"><FiAlignJustify size="30"/></Button>:<Button   onClick={handelClose} zIndex={3} position={"fixed" }top="7px" right="10px"><IoClose  size="25"/></Button>  }
           <Box fontSize={"1.4rem"} position={"fixed"} zIndex={1} w="100%" h="100vh"   onClick={handelClose} display={state?"block":"none"} >
                  <Box onClick={handelOpen} display={"flex"} flexDirection={"column"} gap="10px" zIndex={20}  w="45%" h="100vh" backgroundColor="rgba(64,123,255,0.5)" float="right"   textAlign={"center"} pt="15%">
-                 <NavLink  to="/home" > <Button     >Home</Button></NavLink>
-                 <NavLink  to="/blog"  >  <Button  >blog</Button></NavLink>
+                 <NavLink  to="/home" > <Button     >All Doubt</Button></NavLink>
+                 <NavLink  to="/blog"  >  <Button  >Doubt</Button></NavLink>
               {!token?  <NavLink  to="/"  > <Button   >Signup</Button></NavLink>:null} 
               {!token?  <NavLink  to="/login"  > <Button   >Login</Button></NavLink>:null}
                  {token? <NavLink  > <Button onClick={()=>dispatch({type:LOGOUT})}>
