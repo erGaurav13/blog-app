@@ -22,9 +22,10 @@ blogRoute.post("/blog", async (req, res) => {
 
   const authHeader = req.headers.authorization;
   const token = authHeader.replace("Bearer", "");
-
+ 
   try {
     const decoded = jwt.verify(token, "12345");
+    console.log(decoded.email)
     const post = await BlogModel.create({
       email: decoded.email,
       title,
@@ -55,7 +56,7 @@ blogRoute.delete("/blog/:_id", async (req, res) => {
 });
 
 blogRoute.post("/blog/comment",async (req,res)=>{
-  // email=coment by:
+  // email=comment by:
   // _id =id of blog on which comment is done 
    
  
